@@ -1,0 +1,60 @@
+
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+#centerCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+.home_page{
+    background-image: url("../../assets/73810-business-idea-animation.gif");
+    background-repeat: no-repeat;
+    background-size:auto;
+    height : 100%;
+    width: 100%;
+}
+.card{
+    border: none;
+    width: 500px;
+    padding: 40px;
+    /* margin-right: auto;
+    left:250px; */
+    /* height:60vh; */
+    position: absolute;
+    left: 55%;
+    /* transform: translate(-50%, 50%); */
+    background: rgb(185, 191, 196);
+    background: linear-gradient(90deg, rgb(162, 128, 230),rgb(18, 150, 245) 100%);
+}
+.card h1 , h6{
+    color: #fff;
+}
+.card label{
+    color: #fff;
+}
+/* .imge{
+    background-image: url(../../assets/images/studyon_header_20161.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+} */
+.logIn {
+    margin-left: 80%;
+}
+nav{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding-left: 3%;
+    background: rgb(185, 191, 196);
+    background: linear-gradient(90deg, rgb(162, 128, 230),rgb(118, 248, 161) 100%);
+}
+.nav-btn{
+    margin: 5px 10px 0px 10px; 
+}
+

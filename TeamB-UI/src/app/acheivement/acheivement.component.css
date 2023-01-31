@@ -1,0 +1,139 @@
+.panel {
+    width: 831px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 200px;
+    justify-content: space-evenly;
+
+}
+
+.starr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accrodin {
+    padding: 10px;
+}
+
+body {
+    background-color: transparent;
+    /* padding-top: 25px; */
+    background-image: url('../../assets/achievement_background.jpg');
+}
+
+.container {
+    display: flex;
+}
+
+.brown {
+    background-color: rgb(192, 115, 115);
+}
+
+.red {
+    background-color: white;
+}
+
+.left {
+    height: 550px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 7px;
+    background-color: bisque;
+}
+
+.right {
+    margin-left: 10px;
+    height: 550px;
+    width: 70%;
+    margin-top: 10px;
+    margin-left: 2 0px;
+    border-radius: 7px;
+    background-color: blanchedalmond;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.card {
+    margin-top: 24px;
+    margin-left: 30px;
+    width: 220px;
+    height: 80px;
+}
+#btn{
+    margin-right: 10px;
+    padding-top: 1px;
+    height: 30px;
+}
+
+.starClass {
+    color: red;
+}
+
+th {
+    display: none;
+}
+
+p-table {
+    min-width: 29rem;
+    padding: 71px;
+}
+
+.arrowIcon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tableDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    margin-bottom: 45px;
+
+}
+
+.imageHeading {
+    display: flex;
+    flex-direction: column;
+}
+
+.h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.cancelDiv {
+    display: flex;
+    align-items: center;
+}
+/* p-datatable-tbody{
+    padding:10px;
+    border-radius: 6px;
+} */
+ p-datatable-tbody > tr > td {
+    text-align: left;
+    border: 1px solid #dee2e6;
+    border-width: 0 0 1px 0;
+    padding:10px;
+    border-radius:6px ;
+}

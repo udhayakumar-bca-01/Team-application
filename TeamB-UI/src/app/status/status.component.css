@@ -1,0 +1,16 @@
+.card {
+    margin: 10px 0px 0px 0px;
+    width: calc(100vw - 65px);
+    height: calc(100vh - 8rem);
+ }
+ 
+ .header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+ 
+ .form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ }

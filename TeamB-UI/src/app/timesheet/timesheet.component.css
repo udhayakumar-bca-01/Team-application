@@ -1,0 +1,164 @@
+table {
+    width: 100%;
+  }
+  
+ body{
+    background-color: rgb(197, 140, 140);
+    padding-top: 10px;
+    padding-bottom: 18.5px;
+    max-height:auto;
+    
+  }
+  .contaainer {
+    margin:20px;
+    padding: 25px;
+    margin-top: 20px;
+    padding-top:10px;
+    background-color:white;     
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px  red;
+    box-shadow: 0 0 8px rgb(0 0 0 / 60%);
+  }
+  h1{
+    text-align: center;
+    margin: 0px;
+  }
+  
+  .btn1 {
+    width: 125px;
+    background-color: rgb(70 216 70);
+    height: 40px;
+    padding: 2px;
+    border-radius: 23px;
+    border: 0.5px black;
+    
+  }
+
+  
+  .btn2 {
+    width: 125px;
+    background-color: #f44336;
+    height: 40px;
+    padding: 2px;
+    border-radius: 23px;
+    margin-left: 10px;
+    border: 0.5px black;
+
+  }
+  
+  .btn3 {
+    width: 113px;
+    background-color: #ec5c28;
+    height: 40px;
+    padding: 2px;
+    font-size: 15px;
+    border-radius: 23px;
+    margin-left: 10px;
+    border: 0.5px black;
+  }
+  
+  .btn4 {
+    width: 113px;
+    background-color: #2196f3;
+    font-size: 15px;
+    height: 40px;
+    margin-left: 10px;
+    padding: 2px;
+    border-radius: 23px;
+    border: 0.5px black;
+  }
+  
+  .tabl-header {
+    font-weight: 600;
+    font-size: 14px;
+  }
+tr.mat-header-row {
+    height: 47px;
+}
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 8px;
+    border: 1px solid #e0dcdc;
+  
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .filter {
+    display: flex;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .scroll {
+    width: 100%;
+    height: 350px;
+    overflow: auto;
+    overflow-x: hidden;
+  }
+  
+  .header {
+    background-color: rgb(116, 255, 243);
+  }
+  
+  .filterr {
+    display: flex;
+  }
+  
+  .date1 {
+    margin-left: 10px;
+  }
+  
+  .date2 {
+    margin-left: 12rem;
+  }
+  
+  .fform {
+    padding-top: 5px;
+    margin-left: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 0.5px solid #d7d0d0;
+  }
+  
+  .button-form {
+    width: 100px;
+    background-color: rgb(53, 179, 53);
+    /* font-size: 23px; */
+    padding: 3px;
+    border-radius: 6px;
+  
+    margin-left: 30rem;
+    margin-right: 48px;
+  
+  }
+  
+  p {
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 0px;
+  }
+
+  .toggleBtn {
+    margin-top: -10px;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-between;
+   
+  }
+
+.form-select{
+    height: 40px;
+    width:350px;
+}

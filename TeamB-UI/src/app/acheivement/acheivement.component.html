@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+  <div class="container">
+    
+
+        <div class="left">
+            <ng-container *ngFor="let x of Users ;let i = index">
+                <mat-card class="card" (click)="cardClick(i)">
+                 <!-- [ngClass]="{'brown' :! toggle, 'white': toggle}"  -->
+                    <mat-card-content >
+                            {{x.name}}
+                    </mat-card-content>
+                    <mat-card-content >
+                        <p-rating [(ngModel)]="x.stars" (onRate)="onClick($event,x.id,x.name,x.message)"
+                            [cancel]="false"></p-rating>
+                    </mat-card-content>
+                </mat-card>
+            </ng-container>
+        </div>
+
+        <div class="right" *ngIf="!show">
+            <div class="content" *ngIf="nameVisible">
+                <h1>{{Users[empty].name}}</h1>
+                <h3>{{Users[empty].message}}</h3>
+                <div style="text-align: center;">
+                    <input type="text" pInputText [(ngModel)]="property" placeholder="Add Message" style="margin-right: 20px;" />
+                    <button pButton type="button" icon="pi pi-check" iconPos="left" *ngIf="property" 
+                        (click)="addMessage(Users[empty].id)">
+                    </button>
+                </div>
+                <ng-container *ngIf="msgVisible">
+                    <p-table [value]="messageArray" [scrollable]="true" scrollHeight="230px" [tableStyle]="{'min-width': '29rem','padding':'70px'}">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Code</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-mesg>
+                            <tr style="padding-left: 10px;">
+                                <td>
+                                    <div class="tableDiv">
+                                        {{mesg.message}}
+                                        <div class="cancelDiv">
+                                            <button 
+                                            id="btn"
+                                            type="button" 
+                                            class="btn btn-primary" 
+                                            style="margin-right:10px" 
+                                            data-bs-toggle="modal" 
+                                            data-bs-target="#exampleModal" 
+                                            (click)="onEdit(mesg.userId,mesg.message,mesg.id)">
+                                                Edit
+                                            </button>
+                                            <mat-icon class="close-icon" (click)="remove(mesg.id,mesg.userId)"
+                                            color="warn">close
+                                            </mat-icon>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </ng-container>
+            </div>
+        </div>
+        <div class="right" *ngIf="show">
+            <div class="imageHeading">
+                <img src="../../assets/acheivements.jpg" alt="Acheivements" class="image">
+                <h1 class="h1">Achievements</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Message Editor</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Message</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" formControlName="message" aria-describedby="emailHelp">
+                        </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="updateMesg()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

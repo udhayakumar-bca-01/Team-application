@@ -1,0 +1,189 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<div class="whole">
+
+
+    <div class="leftt">
+        <div class="eventCal">
+           
+        </div>
+        <mat-card class="leavePlanner">
+            <full-calendar [options]="calendarOptions" ></full-calendar><br>
+            <h2 style="font-weight: 500;">Add Events</h2>
+            <form [formGroup]="eventForm" style="margin-top: -13px;">
+                <label for="title" style="margin-right: 20px;font-weight: 500;font-size:17px"> Title:</label>
+                <input formControlName="title" type="text" style="width: 117px; height: 29px;margin-right: 20px;" pInputText />
+                <label for="eventDate" style="margin-right: 10px;font-weight: 500;font-size:17px"> Date:</label>
+                <p-calendar formControlName="eventDate" dateFormat="yy-mm-dd" class="claden" [showIcon]="true"
+                    inputId="icon" style="margin-right: 30px;"></p-calendar>
+                <button pButton type="button" icon="pi pi-check" iconPos="left" class="btnEvent"
+                    style=" width:2rem;padding:4px;" (click)="addEvents()">
+                </button>
+            </form>
+            <!-- <p-calendar [inline]="true" selectionMode="multiple" [(ngModel)]="value"></p-calendar>
+            <mat-card-actions>
+                <div class="forHoliday">
+                <p class="para" >.</p><p style="font-size: 18px;">Holidays</p>
+            </div>
+            </mat-card-actions> -->
+        </mat-card>
+        <!-- [disabledDates]="value" -->
+        <!-- <mat-card class="demo-inline-calendar-card caldendar">
+        <mat-calendar [(selected)]="selected"></mat-calendar>
+      </mat-card> -->
+
+    </div>
+    <div class="right">
+        <p-tabView>
+            <p-tabPanel header="Apply For Leave">
+                <div class="save">
+
+
+                    <button *ngIf="!show" style="float: right;" class="btn3" mat-raised-button (click)="saveLeave()">
+                        Saved Leave
+                    </button>
+                    <button *ngIf="show" style="float: right;" class="btn3" mat-raised-button (click)="saveLeave()">
+                        Leave Form
+                    </button>
+                    <br>
+                </div>
+                <div class="leaveForm" *ngIf="!show">
+                    <form [formGroup]="leaveForm">
+
+                        <mat-divider></mat-divider><br>
+
+                        <div class="fromDate">
+                            <label for="fromDate">FROM DATE</label>
+                            <p-calendar formControlName="fromDate" dateFormat="dd.mm.yy" [showIcon]="true"
+                                inputId="icon"></p-calendar>
+                        </div>
+                        <br>
+                        <mat-divider class="divider"></mat-divider> <br>
+
+                        <div class="toDate">
+                            <label for="toDate" style="margin-right: 14px;"> TO DATE</label>
+                            <p-calendar formControlName="toDate" (onSelect)="patchDays($event)" dateFormat="dd.mm.yy"
+                                [showIcon]="true" inputId="icon">
+                            </p-calendar>
+                        </div><br>
+
+                        <mat-divider class="divider"></mat-divider> <br>
+                        <div class="days">
+                            <label for="dayInput" style="margin-right: 38px;"> DAYS</label>
+                            <input formControlName="days" type="text" [disabled]="true" pInputText />
+                        </div><br>
+                        <mat-divider class="divider"></mat-divider> <br>
+                        <div class="reason">
+                            <label for="reasonInput" style="margin-right: 21px;"> REASON</label>
+                            <textarea formControlName="reason" pInputTextarea class="textArea"></textarea>
+                        </div><br>
+                        <mat-divider class="divider"></mat-divider> <br>
+                        <div class="submit">
+                            <button pButton type="button" (click)="onLeaveSubmit()" class="p-button-outlined"
+                                [disabled]="leaveForm.invalid">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div *ngIf="show">
+                    <p-table [value]="arr" [tableStyle]="{'min-width': '50rem'}" class="tabl">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>From Date</th>
+                                <th>To Date</th>
+                                <th>Days</th>
+                                <th class="resaon">Reason</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-user>
+                            <tr>
+                                <td>{{user.fromDate}}</td>
+                                <td>{{user.toDate}}</td>
+                                <td>{{user.Days}}</td>
+                                <td>
+                                    <div class="delete">
+                                        {{user.Reason}}
+                                        <button class="delBtn" (click)="deleteLeave(user)">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Apply For Attendance">
+                <div class="save">
+                    <button *ngIf="!visible" style="float: right;" class="btn3" mat-raised-button
+                        (click)="saveAttendance()">
+                        Saved Attendance
+                    </button>
+                    <button *ngIf="visible" style="float: right;" class="btn3" mat-raised-button
+                        (click)="saveAttendance()">
+                        Attendance Form
+                    </button>
+                </div>
+                <div class="attendanceForm" *ngIf="!visible">
+                    <form [formGroup]="attendanceForm">
+                        <mat-divider></mat-divider> <br>
+
+                        <div class="fromDate">
+                            <label for="fromDate2"> FROM DATE</label>
+                            <p-calendar formControlName="fromDate2" dateFormat="dd.mm.yy" [showIcon]="true"
+                                inputId="icon"></p-calendar>
+                        </div>
+                        <br>
+                        <mat-divider class="divider"></mat-divider> <br>
+
+                        <div class="toDate">
+                            <label for="toDate2" style="margin-right: 14px;"> TO DATE</label>
+                            <p-calendar formControlName="toDate2" dateFormat="dd.mm.yy" [showIcon]="true"
+                                inputId="icon"></p-calendar>
+                        </div><br>
+                        <mat-divider class="divider"></mat-divider> <br>
+                        <div class="Days">
+                            <label for="workingHrs" style="margin-right: 75px;"> WORKING HOURS</label>
+                            <input formControlName="workingHrs" type="text" pInputText required />
+                        </div><br>
+                        <mat-divider class="divider"></mat-divider> <br>
+                        <div class="submit">
+                            <button pButton type="button" (click)="onAttendanceSubmit()" class="p-button-outlined"
+                                [disabled]='attendanceForm.invalid'>Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div *ngIf="visible">
+                    <p-table [value]="attendanceArr" [tableStyle]="{'min-width': '50rem'}">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>From Date</th>
+                                <th>To Date</th>
+                                <th>Working Hours</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-user>
+                            <tr>
+                                <td>{{user.fromDate}}</td>
+                                <td>{{user.toDate}}</td>
+                                <td>
+                                    <div class="delete">
+                                        {{user.workingHrs}}
+                                        <button class="delBtn" (click)="deleteAttendace(user)">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Holidays List">
+                For Holidays list
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>
+
+
+<!-- 
+<p-calendar [inline]="true">
+    <ng-template pTemplate="date" let-date>
+        <span [ngStyle]="{backgroundColor: (date.day < 21 && date.day > 10) ? 'red' : 'inherit'}">{{date.day}}</span>
+    </ng-template>
+</p-calendar> -->

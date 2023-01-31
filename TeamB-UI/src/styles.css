@@ -1,0 +1,99 @@
+.form-control.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+/* html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+} */
+
+.p-datatable {
+    width: 100%;
+
+}
+
+.p-inputtextarea {
+    width: 205px;
+}
+
+.p-datepicker-inline {
+    width: 402px;
+    position: unset !important;
+    overflow-x: auto;
+}
+
+p-calendar td span.p-highlight {
+    color: red !important;
+    background: orange !important
+}
+
+.p-breadcrumb {
+    width: 200px;
+    padding: 10px !important;
+}
+
+/* .claden .p-calendar .p-datepicker {
+            width: 100px;
+            height: 100px;
+
+} */
+.claden .p-calendar .p-inputtext {
+    width: 117px;
+    height: 29px;
+}
+.claden .p-button.p-button-icon-only {
+    width: 2rem;
+    padding: 0;
+}
+.fc .fc-toolbar-title {
+    font-size: 20px !important;
+    margin: 0;
+} 
+.fc-toolbar h2 {
+    margin: 0;
+    font-family: sans-serif;
+    color: rgb(24, 22, 22);
+}
+.fc-today-button .fc-button .fc-button-primary{
+    padding: 2px 0px !important;
+    width: 85px !important;
+}
+
+.fc.fc-theme-standard .fc-toolbar .fc-button {
+    background-color: rgb(145, 145, 30) !important;
+    font-size: 15px !important;
+}
+.fc.fc-theme-standard .fc-toolbar .fc-button-group .fc-button:first-child  {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: antiquewhite !important;
+}
+.fc.fc-theme-standard .fc-toolbar .fc-button-group .fc-button:last-child  {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: antiquewhite !important;
+}
+.fc.fc-theme-standard .fc-toolbar .fc-button {
+    color: #ffffff;
+    background: #3B82F6;
+    border: 1px solid #3B82F6;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: 6px;
+}
+.p-datatable .p-datatable-thead > tr > th{
+    padding: 10px 10px;
+    width:50px
+}
+
+.resaon .p-datatable .p-datatable-thead > tr > th{
+    width:50px
+}
+.p-datatable{
+    width:90%;
+}

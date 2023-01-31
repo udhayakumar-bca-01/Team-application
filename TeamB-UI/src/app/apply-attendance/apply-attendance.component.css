@@ -1,0 +1,160 @@
+.whole{
+    display: flex;
+}
+.leftt{
+    padding: 8px;
+    height: 700px;
+    width:50%;
+}
+
+.right{
+    margin: 10px;
+    height: 600px;
+    width: 50%;
+    border: 1px solid rgb(214, 212, 212);
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+.leavePlanner{
+    height: 600px;
+
+}
+.save {
+
+    display: flex;
+    align-content: space-around;
+    justify-content: flex-end;
+
+}
+
+.leaveForm {
+    border: 0.2px solid #dfdcdc;
+    margin: auto;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+.attendanceForm {
+    border: 0.2px solid #dfdcdc;
+    margin: auto;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.fromDate {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.toDate {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.days {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.reason {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.datePicker {
+    width: 200px;
+    height: 75px;
+    padding-top: 7px;
+}
+
+mat-divider {
+    width: 450px;
+}
+
+.btn3 {
+    width: 163px;
+    background-color: #ec5c28;
+    height: 40px;
+    padding: 2px;
+    font-size: 15px;
+    border-radius: 23px;
+    margin-left: 10px;
+    border: 0.5px black;
+  }
+  .btn4 {
+    width: 113px;
+    background-color: #2196f3;
+    font-size: 15px;
+    height: 40px;
+    margin-left: 10px;
+    padding: 2px;
+    border-radius: 23px;
+    border: 0.5px black;
+  }
+  .delBtn{
+    width: 113px;
+    background-color: #2196f3;
+    font-size: 15px;
+    height: 40px;
+    margin-left: 10px;
+    padding: 2px;
+    border-radius: 23px;
+    border: 0.5px black;
+  }
+  .delete{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.para{
+    background-color: orange;
+    width: 20px;
+    margin-right:15px;
+       
+}
+.forHoliday{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* ::ng-deep .p-datepicker table td > span {
+    background-color: orange;
+  }
+  ::ng-deep .p-datepicker table td.p-datepicker-today > span {
+    background-color: burlywood;
+  } */
+
+
+  .fc .fc-col-header-cell-cushion { /* needs to be same precedence */
+    padding-top: 5px; /* an override! */
+    padding-bottom: 5px; /* an override! */
+  }
+
+  /* .eventCal{
+    display: flex;
+  } */
+  .fc-widget-header{
+    background-color:blue;
+}
+full-calendar{
+    height: 436px;
+}
+.fc-today-button .fc-button .fc-button-primary{
+    padding: 2px 0px !important;
+    width: 85px !important;
+}

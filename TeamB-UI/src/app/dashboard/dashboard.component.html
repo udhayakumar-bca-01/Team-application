@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+         .dropdown:hover>.dropdown-menu {
+            display: block
+        }
+    </style>
+
+    <div class='contaainer'>
+        <div>
+            <mat-toolbar class="navBar">
+                <span style="font-size: 20px;font-family: sans-serif;">TVM Managers Board</span>
+                <span class="example-spacer"></span>
+                <div class="acc-logOut">
+                    <mat-icon class="fa fa-user" id="accIcon" [matMenuTriggerFor]="account">account_circle</mat-icon>
+                    <mat-menu #account="matMenu" class="menuList">
+                        <ng-container *ngFor="let x of Accounts">
+                            <button mat-menu-item>{{x.mail}}</button>
+                        </ng-container>
+                    </mat-menu>
+                    <mat-icon id="logOut">output</mat-icon>
+                </div>
+            </mat-toolbar>
+        </div>
+        <div class="bodyContent">
+            <div class="mesg">
+                {{Time}} <br>{{Today}}
+
+            </div>
+            <div class="quickActions">
+                <mat-toolbar class="QA">
+                    <span >Team B</span>
+                    <span class="example-spacer"></span>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" style="    
+                    width: 158px;
+                    height: 50px;
+                    font-size: 20px;
+                    margin-right: 23px;
+                    background-color: transparent;
+                    color: aliceblue;
+                    font-family: sans-serif;
+                    margin-top: 10px;
+                    margin-right: 14px;" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Dashboard
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <ng-container *ngFor="let x of contents">
+                                <button class="dropdown-item dropdownContent" (click)="openDashboard(x.id)">{{x.content}}</button>
+                            </ng-container>
+
+                        </div>
+                    </div>
+                
+
+                </mat-toolbar>
+                <div class='contents' style="display:flex ;column-gap: 50px; justify-content: space-evenly;">
+                    <!-- <ng-container *ngFor="let x of contents">
+                        <mat-card class="carrd" (click)="openDashboard(x.id)">
+                            <div class="iccon">
+                                <mat-icon class="dashBoardIcon"> {{x.icon}}</mat-icon>
+                            </div>
+                            <div class="cardContent">
+                                <mat-card-content>{{x.content}}</mat-card-content>
+                            </div>
+                        </mat-card>
+                        
+                    </ng-container> -->
+                    <ng-container *ngFor="let x of contents">
+
+                    <mat-card class="gone" (click)="openDashboard(x.id)">
+                        <img class="goneImg" [src]='x.img' alt="Something">
+                        <div class="var">
+                            <div class="h5">{{x.content}}</div>
+                        </div>
+                    </mat-card>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

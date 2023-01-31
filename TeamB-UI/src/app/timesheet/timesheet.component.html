@@ -1,0 +1,119 @@
+<body>
+    <!-- background Image -->
+    <!-- [ngStyle]="{'background-image': bgImage? 'url(\'../../assetsj/htiuhox.jpeg\')':'url(\'\')','background-size': '100% 95%' }" -->
+    <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+    <div class="contaainer">
+
+        <div>
+            <h1> TimeSheet </h1><br>
+            <div>
+            </div><br>
+            <div class='toggleBtn'>
+                <div>
+                    <!-- [disabled]="ref.value==''" -->
+                    <button style="float: left;" class="btn1" mat-raised-button (click)="in()"
+                        matTooltip="Info about the action">
+                        <div style="display: flex;justify-content: center;align-items: stretch; font-size: 18px;">
+                            <mat-icon style="margin-right: 2px;
+                            font-size: 18px;
+                            margin-top: 5px;">input</mat-icon> In
+                        </div>
+                    </button>
+                    <!-- [disabled]="ref.value==''" -->
+                    <button style="float: left;" class="btn2" mat-raised-button (click)="out()">
+                        <div style="display: flex;justify-content: center;align-items: stretch; font-size: 18px;">
+                            <mat-icon style="margin-right: 2px;
+                            font-size: 18px;
+                            margin-top: 5px;">output</mat-icon>Out
+                        </div>
+                    </button>
+
+                </div>
+
+                <!-- <div style="display: flex; flex-direction: column; align-items: center;">
+                    <select #ref class="form-select" [(ngModel)]="selectedMember" (change)="onChange()"
+                        aria-label="Default select example" placeholder="Select User">
+                        <option *ngFor="let x of members" [value]="x">{{x}}</option>
+                    </select>
+                    <ng-container *ngIf="show">
+                        <small>Hint: Select User First</small>
+                    </ng-container>
+                </div> -->
+                <div>
+                    <h1>{{message}}</h1>
+                </div>
+                <div>
+
+                    <button style="float: right;" class="btn4" mat-raised-button (click)="allDay()">
+                        All Days
+                    </button>
+                    <button style="float: right;" class="btn3" mat-raised-button (click)="today()">
+                        Today
+                    </button>
+
+                </div>
+            </div><br><br>
+            <ng-container *ngIf="visible">
+                <div>
+                    <form [formGroup]="formForFilter">
+                        <div class="fform">
+                            <mat-form-field class="date1">
+                                <input matInput placeholder="Date From" [matDatepicker]="picker1"
+                                    formControlName="fromDate" required (click)="picker1.open()">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                            <mat-form-field class="date2">
+                                <input matInput placeholder="To Date" [matDatepicker]="picker2" formControlName="toDate"
+                                    required (click)="picker2.open()">
+                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                <mat-datepicker #picker2></mat-datepicker>
+                            </mat-form-field>
+
+                            <button class="button-form" mat-raised-button color="accent" (click)="applyFilter()"
+                                [disabled]="formForFilter.invalid">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </ng-container>
+        </div>
+
+        <div class="scroll">
+
+            <table #table mat-table [dataSource]='flag?dataSource:filterData' class="mat-elevation-z8">
+                <ng-container matColumnDef="In_Out">
+                    <th mat-header-cell *matHeaderCellDef class="tabl-header"> In_Out </th>
+                    <td mat-cell style="width:50px;" *matCellDef="let Elements"> {{Elements.In_Out}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Date">
+                    <th mat-header-cell *matHeaderCellDef class="tabl-header"> Date <mat-icon (click)="openfilter()">
+                            filter_list</mat-icon>
+
+                    <td mat-cell style="width:60px;" *matCellDef="let Elements"> {{Elements.Date }}</td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Time">
+                    <th mat-header-cell *matHeaderCellDef class="tabl-header"> Time </th>
+                    <td mat-cell style="width:60px;" *matCellDef="let Elements"> {{Elements.Time | dateConverter }}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="Shifts">
+                    <th mat-header-cell *matHeaderCellDef class="tabl-header"> Shifts </th>
+                    <td mat-cell style="width:60px;" *matCellDef="let Elements"> {{Elements.Shifts}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Members">
+                    <th mat-header-cell *matHeaderCellDef class="tabl-header"> Member </th>
+                    <td mat-cell style="width:60px;" *matCellDef="let Elements"> {{Elements.Members}} </td>
+                </ng-container>
+
+                <tr mat-header-row class="header" *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            </table>
+        </div>
+    </div><br>
+    <p>© 2022 TVM Infotech</p>
+
+</body>

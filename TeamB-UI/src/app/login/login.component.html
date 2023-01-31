@@ -1,0 +1,49 @@
+<nav class="navlink">
+    <div class="navbar">
+        <button class="btn btn-primary nav-btn" routerLink="/register">Register</button>
+        <button class="btn btn-primary nav-btn" routerLink="/login">logIn</button>
+    </div>
+</nav>
+<div class="imge">
+    <div class="container">
+        <div class="home_page">
+            <div class="col-md-6" id="centerCard">
+                <div class="card mx-auto">
+                    <div class="text-center">
+                        <h1>LogIn Page</h1>
+                        <h6> Please Enter UserName & Password</h6>
+                    </div>
+                    <form [formGroup]='loginForm'>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputEmail1">Email address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                            <div *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched"
+                                class=" text-danger">
+                                <small *ngIf="loginForm.get('email')?.errors?.['required']">Enter Your Email ID</small>
+                                <small *ngIf="loginForm.get('email')?.errors?.['email']">Enter Valid Email Id</small>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" [(ngModel)]="password"
+                                formControlName="password" id="exampleInputPassword1" placeholder="Password">
+                            <div class="text-danger"
+                                *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">
+                                {{errorMessage}}
+                                <!-- <small *ngIf="!loginForm.get('password')?.valid"></small> -->
+                                <!-- *ngIf=" submitted && loginForm.get('password')?.errors?.['required']" -->
+                                <small *ngIf="loginForm.get('password')?.errors?.['minlength']"> Enter valid
+                                    Password</small>
+                            </div>
+                        </div>
+                        <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary logIn"
+                            (click)="onSubmit(loginForm)">Submit</button>
+                    </form>
+                    <a style="color: rgb(52, 58, 241) ; margin-top: 10px;" routerLink="/register"> New user? Click here
+                        Register </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
