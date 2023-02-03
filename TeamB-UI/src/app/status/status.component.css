@@ -1,5 +1,5 @@
 .card {
-    margin: 10px 0px 0px 0px;
+    margin: 5px 5px 5px 5px;
     width: calc(100vw - 65px);
     height: calc(100vh - 8rem);
  }
@@ -9,7 +9,7 @@
     margin-bottom: 20px;
  }
  
- .form {
+ .form  {
     display: flex;
     justify-content: space-around;
     align-items: center;
